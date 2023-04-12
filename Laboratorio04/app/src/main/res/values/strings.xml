@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Laboratorio04</string>
+    <string name="info_main_text_view">Rellena la siguiente información</string>
+    <string name="save_action">GUARDAR</string>
+    <string name="phone_numer_input">Número de teléfono</string>
+    <string name="main_input">Correo electrónico</string>
+    <string name="name_input">Nombre</string>
+    <string name="name_share_value">Nombre :  %s</string>
+    <string name="mail_share_value">Correo electrónico :  %s</string>
+    <string name="phone_numer_share_value">Número de teléfono :  %s</string>
+    <string name="share_text">COMPARTIR</string>
+    <string name="main_info">Confirma tu información</string>
+</resources>
