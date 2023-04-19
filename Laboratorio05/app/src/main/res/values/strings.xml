@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Laboratorio05</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="billboard_tittle">Billboard</string>
+    <string name="calification">9.8</string>
+    <string name="input_name">Name</string>
+    <string name="category_input">Category</string>
+    <string name="description_input">Description</string>
+    <string name="calification_input">Calification</string>
+    <string name="starwars_movie_content">StarWars-Movie</string>
+    <string name="movie_description">Star Wars episodio 3: La venganza de los Sith</string>
+    <string name="ciencia_ficcion_category">Ciencia Ficcion</string>
+    <string name="movie_description_full">La pelicula se centra en el personaje de Anakin Skywalker, quien esta siendo tentado por el Lado Oscuro de la Fuerza mientras el imperio Galactico comienza a surgir. La trama tambien muestra la caida de la Republica Galactica y el ascenso del Emperador Palpatine.</string>
+    <string name="movie_tittle">Star Wars episodio 3: \nLa venganza de los Sith</string>
+</resources>

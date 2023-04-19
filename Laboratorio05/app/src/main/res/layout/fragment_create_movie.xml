@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateMovieFragment"
+    android:background="@color/backgroundLayout">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/medium_gap"
+        android:text="New movie"
+        android:textStyle="bold"
+        android:textSize="@dimen/medium_text_size"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/actionSubmitMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:text="SUBMIT"
+        android:textSize="@dimen/small_text_size"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/buttonColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/input_name"
+        android:paddingStart="@dimen/small_medium_gap"
+        android:background="@color/cardLayout"
+        android:textColor="@color/white"
+        android:layout_marginBottom="@dimen/medium_gap"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText2"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
+        app:layout_constraintStart_toStartOf="@+id/editTextText2" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/category_input"
+        android:background="@color/cardLayout"
+        android:textColor="@color/white"
+        android:paddingStart="@dimen/small_medium_gap"
+        android:layout_marginBottom="@dimen/medium_gap"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/description_input"
+        android:background="@color/cardLayout"
+        android:textColor="@color/white"
+        android:paddingStart="@dimen/small_medium_gap"
+        android:layout_marginTop="@dimen/medium_gap"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
+        app:layout_constraintStart_toStartOf="@+id/editTextText2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <EditText
+        android:id="@+id/editTextText4"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/calification_input"
+        android:background="@color/cardLayout"
+        android:textColor="@color/white"
+        android:paddingStart="@dimen/small_medium_gap"
+        android:layout_marginTop="@dimen/medium_gap"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText3"
+        app:layout_constraintStart_toStartOf="@+id/editTextText3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+</androidx.constraintlayout.widget.ConstraintLayout>
