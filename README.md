@@ -15,3 +15,25 @@ Un ejemplo de intent immplicito, es cuando como por ejemplo cuando en el boton C
 El estado en el que si inicializan las variables y se crea la vista en es el "OnCreate"
 
 
+TO - DO Laboratorio 05
+
+1.	¿Qué diferencia existe entre navegar dentro de la aplicación utilizando
+	Navigation Component o hacer uso de intents? 
+	
+El navegation component y los intents, son dos formas diferentes de navegar en una aplicacion android, su principal diferencia se encuentra en la 
+forma en la que navegation componente proporciona de una manera mas sencilla e intuitiva y sobre todo mas coherente de navegar dentro de la aplicacion, asi mismo,
+normalmente los intents se utilizan para iniciar nuevas actividades o abrir una URL, en cambio, en el navegation component se utilizan mas los fragmentos.
+
+2.	Menciona los componentes fundamentales de Navigation Component
+
+Algunos de sus componentes fundamentales son: 
+-NavGraph: Representación del flujo que tendrá la aplicación.
+-NavHost: Básicamente un contenedor que almacenará los fragmentos o actividades que se mostrarán en la aplicación.
+-NavController: Es una clase que permite gestionar la navegación de la aplicación.
+-Destinos
+-Acciones
+
+3.	Mencione algunas de las ventajas del Navigation Graph
+
+Permite crear la navegación de la aplicación de una forma más intuitiva, clara y sobre todo más coherente. También permite acceder a una representación visual de lo que será 
+el flujo de navegación a través del nav graph.
