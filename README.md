@@ -37,3 +37,19 @@ Algunos de sus componentes fundamentales son:
 
 Permite crear la navegación de la aplicación de una forma más intuitiva, clara y sobre todo más coherente. También permite acceder a una representación visual de lo que será 
 el flujo de navegación a través del nav graph.
+
+
+TO - DO Laboratorio 06
+
+1.	¿En qué consiste el patrón de diseño Repository?
+
+Es un patrón de diseño creacional que proporciona una interfaz para crear objetos en una superclase, mientras permite a las subclases alterar el tipo de objetos que se crearán.
+En este caso, nos ayudo con el ViewModel ya que necesitábamos pasarle parametros al ViewModel, el cual por defecto no recibe ninguno. 
+
+2.	¿Qué es el ViewModel?
+
+Basicamente es un contenedor que se queda acplado al ciclo de vida de una activity, fragement, etc. Su principal ventaja es que almacena en caché el estado y lo conserva
+durante los cambios de configuración. Esto implica que si la vista se destruye, los datos no se pierdan. 
+
+
+
