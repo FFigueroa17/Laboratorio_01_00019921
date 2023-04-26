@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateMovieFragment"
+    tools:context=".ui.movie.CreateMovieFragment"
     android:background="@color/backgroundLayout">
 
 
@@ -13,11 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/medium_gap"
-        android:text="New movie"
+        android:text="@string/new_movie_text"
         android:textStyle="bold"
         android:textSize="@dimen/medium_text_size"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText"
+        app:layout_constraintBottom_toTopOf="@+id/NameEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -33,30 +33,30 @@
         android:backgroundTint="@color/buttonColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintTop_toBottomOf="@+id/CalificationEditText" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/NameEditText"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/input_name"
+        android:hint="@string/input_name"
         android:paddingStart="@dimen/small_medium_gap"
         android:background="@color/cardLayout"
         android:textColor="@color/white"
         android:layout_marginBottom="@dimen/medium_gap"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText2"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2" />
+        app:layout_constraintBottom_toTopOf="@+id/CategoryEditText"
+        app:layout_constraintEnd_toEndOf="@+id/CategoryEditText"
+        app:layout_constraintStart_toStartOf="@+id/CategoryEditText" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/CategoryEditText"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/category_input"
+        android:hint="@string/category_input"
         android:background="@color/cardLayout"
         android:textColor="@color/white"
         android:paddingStart="@dimen/small_medium_gap"
@@ -67,32 +67,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/DescriptionEditText"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/description_input"
+        android:hint="@string/description_input"
         android:background="@color/cardLayout"
         android:textColor="@color/white"
         android:paddingStart="@dimen/small_medium_gap"
         android:layout_marginTop="@dimen/medium_gap"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintEnd_toEndOf="@+id/CategoryEditText"
+        app:layout_constraintStart_toStartOf="@+id/CategoryEditText"
+        app:layout_constraintTop_toBottomOf="@+id/CategoryEditText" />
 
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/CalificationEditText"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/calification_input"
+        android:hint="@string/calification_input"
         android:background="@color/cardLayout"
         android:textColor="@color/white"
         android:paddingStart="@dimen/small_medium_gap"
         android:layout_marginTop="@dimen/medium_gap"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText3"
-        app:layout_constraintStart_toStartOf="@+id/editTextText3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:layout_constraintEnd_toEndOf="@+id/DescriptionEditText"
+        app:layout_constraintStart_toStartOf="@+id/DescriptionEditText"
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
