@@ -6,22 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bdev.laboratorio05.R
+import com.bdev.laboratorio05.databinding.FragmentCreateMovieBinding
+import com.bdev.laboratorio05.databinding.FragmentMovieBinding
 
 class MovieFragment : Fragment() {
 
-
+    private lateinit var binding: FragmentMovieBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movie, container, false)
+
+        // ACTIVIAR EL DATA BINDING
+        binding = FragmentMovieBinding.inflate(inflater, container, false)
+
+
+        // RETORNAMOS EL BINDING.ROOT
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
     }
 }

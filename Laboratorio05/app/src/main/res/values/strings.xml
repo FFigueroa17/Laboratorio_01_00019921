@@ -14,4 +14,5 @@
     <string name="movie_description_full">La pelicula se centra en el personaje de Anakin Skywalker, quien esta siendo tentado por el Lado Oscuro de la Fuerza mientras el imperio Galactico comienza a surgir. La trama tambien muestra la caida de la Republica Galactica y el ascenso del Emperador Palpatine.</string>
     <string name="movie_tittle">Star Wars episodio 3: \nLa venganza de los Sith</string>
     <string name="new_movie_text">New Movie</string>
+    <string name="submit_action">SUBMIT</string>
 </resources>

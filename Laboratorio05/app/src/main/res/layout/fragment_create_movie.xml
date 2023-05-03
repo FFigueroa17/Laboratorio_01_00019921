@@ -1,98 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.movie.CreateMovieFragment"
-    android:background="@color/backgroundLayout">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.bdev.laboratorio05.ui.movie.MovieViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.movie.CreateMovieFragment"
+        android:background="@color/backgroundLayout">viewmodel
 
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/medium_gap"
-        android:text="@string/new_movie_text"
-        android:textStyle="bold"
-        android:textSize="@dimen/medium_text_size"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/NameEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_gap"
+            android:text="@string/new_movie_text"
+            android:textStyle="bold"
+            android:textSize="@dimen/medium_text_size"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/NameEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/actionSubmitMovie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium_gap"
-        android:text="SUBMIT"
-        android:textSize="@dimen/small_text_size"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/buttonColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CalificationEditText" />
+        <Button
+            android:id="@+id/actionSubmitMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:text="@string/submit_action"
 
-    <EditText
-        android:id="@+id/NameEditText"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/input_name"
-        android:paddingStart="@dimen/small_medium_gap"
-        android:background="@color/cardLayout"
-        android:textColor="@color/white"
-        android:layout_marginBottom="@dimen/medium_gap"
-        app:layout_constraintBottom_toTopOf="@+id/CategoryEditText"
-        app:layout_constraintEnd_toEndOf="@+id/CategoryEditText"
-        app:layout_constraintStart_toStartOf="@+id/CategoryEditText" />
+            android:onClick="@{()-> viewmodel.createMovie()}"
 
-    <EditText
-        android:id="@+id/CategoryEditText"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/category_input"
-        android:background="@color/cardLayout"
-        android:textColor="@color/white"
-        android:paddingStart="@dimen/small_medium_gap"
-        android:layout_marginBottom="@dimen/medium_gap"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="@dimen/small_text_size"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/buttonColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CalificationEditText" />
 
-    <EditText
-        android:id="@+id/DescriptionEditText"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/description_input"
-        android:background="@color/cardLayout"
-        android:textColor="@color/white"
-        android:paddingStart="@dimen/small_medium_gap"
-        android:layout_marginTop="@dimen/medium_gap"
-        app:layout_constraintEnd_toEndOf="@+id/CategoryEditText"
-        app:layout_constraintStart_toStartOf="@+id/CategoryEditText"
-        app:layout_constraintTop_toBottomOf="@+id/CategoryEditText" />
+        <EditText
+            android:id="@+id/NameEditText"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
 
-    <EditText
-        android:id="@+id/CalificationEditText"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/calification_input"
-        android:background="@color/cardLayout"
-        android:textColor="@color/white"
-        android:paddingStart="@dimen/small_medium_gap"
-        android:layout_marginTop="@dimen/medium_gap"
-        app:layout_constraintEnd_toEndOf="@+id/DescriptionEditText"
-        app:layout_constraintStart_toStartOf="@+id/DescriptionEditText"
-        app:layout_constraintTop_toBottomOf="@+id/DescriptionEditText" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="@={viewmodel.name}"
+
+            android:textColorHint="@color/white"
+            android:inputType="text"
+            android:hint="@string/input_name"
+            android:paddingStart="@dimen/small_medium_gap"
+            android:background="@color/cardLayout"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/medium_gap"
+            app:layout_constraintBottom_toTopOf="@+id/CategoryEditText"
+            app:layout_constraintEnd_toEndOf="@+id/CategoryEditText"
+            app:layout_constraintStart_toStartOf="@+id/CategoryEditText" />
+
+        <EditText
+            android:id="@+id/CategoryEditText"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+
+            android:text="@={viewmodel.category}"
+
+            android:textColorHint="@color/white"
+            android:inputType="text"
+            android:hint="@string/category_input"
+            android:background="@color/cardLayout"
+            android:textColor="@color/white"
+            android:paddingStart="@dimen/small_medium_gap"
+            android:layout_marginBottom="@dimen/medium_gap"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/DescriptionEditText"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+
+            android:text="@={viewmodel.description}"
+
+            android:textColorHint="@color/white"
+            android:inputType="text"
+            android:hint="@string/description_input"
+            android:background="@color/cardLayout"
+            android:textColor="@color/white"
+            android:paddingStart="@dimen/small_medium_gap"
+            android:layout_marginTop="@dimen/medium_gap"
+            app:layout_constraintEnd_toEndOf="@+id/CategoryEditText"
+            app:layout_constraintStart_toStartOf="@+id/CategoryEditText"
+            app:layout_constraintTop_toBottomOf="@+id/CategoryEditText" />
+
+        <EditText
+            android:id="@+id/CalificationEditText"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+
+            android:text="@={viewmodel.qualification}"
+
+            android:textColorHint="@color/white"
+            android:inputType="text"
+            android:hint="@string/calification_input"
+            android:background="@color/cardLayout"
+            android:textColor="@color/white"
+            android:paddingStart="@dimen/small_medium_gap"
+            android:layout_marginTop="@dimen/medium_gap"
+            app:layout_constraintEnd_toEndOf="@+id/DescriptionEditText"
+            app:layout_constraintStart_toStartOf="@+id/DescriptionEditText"
+            app:layout_constraintTop_toBottomOf="@+id/DescriptionEditText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

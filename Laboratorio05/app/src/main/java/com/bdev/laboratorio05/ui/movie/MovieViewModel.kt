@@ -1,6 +1,7 @@
 package com.bdev.laboratorio05.ui.movie
 
 import android.text.Editable.Factory
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.initializer
@@ -11,9 +12,68 @@ import com.bdev.laboratorio05.repository.MovieRepository
 
 class MovieViewModel( private val repository: MovieRepository) : ViewModel() {
 
+    var name = MutableLiveData("")
+    var category = MutableLiveData("")
+    var description= MutableLiveData("")
+    var qualification = MutableLiveData("")
+
+    // PARA EL STATUS
+    var status = MutableLiveData("")
+
+
+    // OBTENER LAS PELICULAS
     fun getMovies() = repository.getMovies()
 
-    fun addMovies(newMovie: MovieModel) = repository.addMovie(newMovie)
+
+    // AGREGAR PELICULAS
+    private fun addMovies(newMovie: MovieModel) = repository.addMovie(newMovie)
+
+    fun createMovie(){
+
+        if (!validateData()){
+            status.value = WRONG_DATA
+            return
+        }
+
+        val newMovie = MovieModel(
+            name.value.toString(), // se utuliza ".value" por la estructura del live data, accedes al valor que almacena el live data
+            category.toString(),
+            description.toString(),
+            qualification.toString()
+        )
+
+        addMovies(newMovie)
+        status.value = MOVIE_CREATED
+    }
+
+
+    // LIMPIAR LA DATA
+
+    fun clearData(){
+        name.value = ""
+        category.value = ""
+        description.value = ""
+        qualification.value = ""
+    }
+
+    // ESTABLECER UN ESTADO BASE
+
+    fun clearState(){
+        status.value = BASE_STATE
+    }
+
+    private fun validateData() : Boolean{
+        when
+        {
+            name.value.isNullOrEmpty() -> return false
+            category.value.isNullOrEmpty() -> return false
+            description.value.isNullOrEmpty() -> return false
+            qualification.value.isNullOrEmpty() -> return false
+        }
+
+        return true
+    }
+
 
     companion object{
 
@@ -26,5 +86,9 @@ class MovieViewModel( private val repository: MovieRepository) : ViewModel() {
                 MovieViewModel(app.movieRepository)
             }
         }
+
+        const val MOVIE_CREATED = "Movie created"
+        const val WRONG_DATA = "Wrong information"
+        const val BASE_STATE = ""
     }
 }

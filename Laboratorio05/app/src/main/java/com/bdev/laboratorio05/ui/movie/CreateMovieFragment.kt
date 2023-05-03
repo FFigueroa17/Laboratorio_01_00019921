@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -21,8 +22,14 @@ import com.bdev.laboratorio05.databinding.FragmentCreateMovieBinding
 
 class CreateMovieFragment : Fragment() {
 
+
+    // IMPLEMENTAR DATA BINDING
+
+
     private lateinit var binding: FragmentCreateMovieBinding
 
+
+    // VIEW MODEL
     private val viewModel: MovieViewModel by activityViewModels { MovieViewModel.Factory }
 
     override fun onCreateView(
@@ -30,8 +37,11 @@ class CreateMovieFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View{
 
+        // ACTIVIAR EL DATA BINDING
         binding = FragmentCreateMovieBinding.inflate(inflater, container, false)
 
+
+        // RETORNAMOS EL BINDING.ROOT
        return binding.root
     }
 
@@ -39,30 +49,38 @@ class CreateMovieFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        binding.actionSubmitMovie.setOnClickListener {
-           createMovie()
+        setViewModel()
+
+        setOberserver()
+
+    }
+
+    private fun setViewModel(){
+        binding.viewmodel = viewModel
+    }
+
+    private fun setOberserver(){
+
+        viewModel.status.observe(viewLifecycleOwner){status ->
+            when{
+                status.equals(MovieViewModel.MOVIE_CREATED) -> {
+
+                    Log.d("APP TAGG", status)
+                    Log.d("APP TAGG", viewModel.getMovies().toString())
+
+                    viewModel.clearState()
+                    viewModel.clearData()
+
+                    findNavController().popBackStack()
+                }
+
+                status.equals(MovieViewModel.WRONG_DATA) -> {
+                    Log.d("APP TAGG", status)
+                    viewModel.clearState()
+                }
+            }
+
         }
     }
 
-
-    private fun createMovie() {
-
-        // Para no escribir el apply siempre.
-
-        binding.apply {
-            val newMovie = MovieModel(
-                NameEditText.text.toString(),
-                DescriptionEditText.text.toString(),
-                CategoryEditText.text.toString(),
-                CalificationEditText.text.toString()
-            )
-
-            viewModel.addMovies(newMovie)
-        }
-
-
-        Log.d("TAG APP", viewModel.getMovies().toString())
-
-        findNavController().popBackStack()
-    }
 }
