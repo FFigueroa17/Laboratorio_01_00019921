@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewmodel"
+            type="com.bdev.laboratorio05.ui.movie.viewmodel.MovieViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,11 +32,11 @@
             android:contentDescription="@string/starwars_movie_content" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tittleTextView"
 
             android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:text="@string/movie_description"
+            android:text="@={viewmodel.name}"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -54,7 +56,7 @@
 
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/ciencia_ficcion_category"
+            android:text="@={viewmodel.category}"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -62,8 +64,8 @@
             android:layout_marginTop="@dimen/small_medium_gap"
             android:layout_marginStart="@dimen/big_gap"
 
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
+            app:layout_constraintStart_toStartOf="@+id/tittleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/tittleTextView">
 
         </TextView>
 
@@ -74,7 +76,7 @@
 
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="@string/movie_description_full"
+            android:text="@={viewmodel.description}"
             android:textColor="@color/white"
             android:textSize="@dimen/small_text_size"
 
@@ -90,7 +92,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
 
-            android:text="@string/calification"
+            android:text="@={viewmodel.qualification}"
             android:textColor="@color/calification"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -99,8 +101,8 @@
             android:layout_marginTop="@dimen/small_medium_gap"
             android:layout_marginEnd="@dimen/big_gap"
 
-            app:layout_constraintEnd_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
+            app:layout_constraintEnd_toEndOf="@+id/tittleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/tittleTextView">
 
         </TextView>
 

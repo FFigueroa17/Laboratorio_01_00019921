@@ -6,16 +6,14 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.bdev.laboratorio05.ui.movie.MovieViewModel" />
+            type="com.bdev.laboratorio05.ui.movie.viewmodel.MovieViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.movie.CreateMovieFragment"
-        android:background="@color/backgroundLayout">viewmodel
-
-
+        tools:context=".ui.movie.newmovie.CreateMovieFragment"
+        android:background="@color/backgroundLayout">
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"

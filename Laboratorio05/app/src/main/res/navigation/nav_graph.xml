@@ -6,7 +6,7 @@
     app:startDestination="@id/billBoardFragment">
     <fragment
         android:id="@+id/billBoardFragment"
-        android:name="com.bdev.laboratorio05.ui.movie.BillBoardFragment"
+        android:name="com.bdev.laboratorio05.ui.movie.billboard.BillBoardFragment"
         android:label="fragment_bill_board"
         tools:layout="@layout/fragment_bill_board" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/createMovieFragment"
-        android:name="com.bdev.laboratorio05.ui.movie.CreateMovieFragment"
+        android:name="com.bdev.laboratorio05.ui.movie.newmovie.CreateMovieFragment"
         android:label="fragment_create_movie"
         tools:layout="@layout/fragment_create_movie" >
         <action

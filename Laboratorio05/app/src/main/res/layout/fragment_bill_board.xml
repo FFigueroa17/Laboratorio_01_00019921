@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.movie.BillBoardFragment"
+        tools:context=".ui.movie.billboard.BillBoardFragment"
         android:background="@color/backgroundLayout">
 
         <TextView
@@ -40,72 +40,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:backgroundTint="@color/buttonColor" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/actionCardViewToDescription"
-            android:layout_width="370dp"
-            android:layout_height="170dp"
-            app:cardCornerRadius="20dp"
-            android:backgroundTint="@color/cardLayout"
-            android:layout_marginStart="@dimen/medium_gap"
-            android:layout_marginTop="@dimen/medium_gap"
-            android:layout_marginEnd="@dimen/medium_gap"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="140dp"
-                    android:layout_height="70dp"
-
-                    android:layout_marginLeft="10dp"
-                    android:scaleType="centerCrop"
-
-                    android:src="@drawable/star_wars"
-
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView2"
-
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:layout_marginTop="@dimen/medium_gap"
-                    android:text="@string/movie_tittle"
-                    android:textColor="@color/white"
-
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                </TextView>
-
-                <TextView
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/medium_gap"
-                    android:text="@string/calification"
-                    android:textColor="@color/calification"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/textView2"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-                </TextView>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
+        </androidx.recyclerview.widget.RecyclerView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

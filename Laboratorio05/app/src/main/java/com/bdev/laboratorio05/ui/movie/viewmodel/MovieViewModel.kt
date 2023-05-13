@@ -1,6 +1,5 @@
-package com.bdev.laboratorio05.ui.movie
+package com.bdev.laboratorio05.ui.movie.viewmodel
 
-import android.text.Editable.Factory
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
@@ -37,9 +36,9 @@ class MovieViewModel( private val repository: MovieRepository) : ViewModel() {
 
         val newMovie = MovieModel(
             name.value.toString(), // se utuliza ".value" por la estructura del live data, accedes al valor que almacena el live data
-            category.toString(),
-            description.toString(),
-            qualification.toString()
+            category.value.toString(),
+            description.value.toString(),
+            qualification.value.toString()
         )
 
         addMovies(newMovie)
@@ -65,6 +64,8 @@ class MovieViewModel( private val repository: MovieRepository) : ViewModel() {
     private fun validateData() : Boolean{
         when
         {
+
+            // FIX = " .VALUE"
             name.value.isNullOrEmpty() -> return false
             category.value.isNullOrEmpty() -> return false
             description.value.isNullOrEmpty() -> return false
@@ -72,6 +73,14 @@ class MovieViewModel( private val repository: MovieRepository) : ViewModel() {
         }
 
         return true
+    }
+
+
+    fun setSelectedMovie(movie: MovieModel){
+        name.value = movie.name
+        category.value = movie.category
+        description.value = movie.description
+        qualification.value = movie.qualification
     }
 
 
