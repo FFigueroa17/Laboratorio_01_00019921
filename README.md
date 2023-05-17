@@ -63,3 +63,32 @@ Ofrece una carga eficiente de elementos, asi como una personalizacion de los mis
 - El archivo xml, que sera el modelo de los items que contendra la lista.
 - ViewHolder: a que se utiliza para almacenar una referencia a la vista de cada elemento de la lista. 
 - ViewAdapter: este se encarga de vincular los datos de una lista o de un conjunto de datos con las vistas que se muestran en pantalla
+
+TO - DO Laboratorio 09
+
+1.	¿Qué es una coroutine en Kotlin y cómo se diferencia de un hilo tradicional?
+
+Las coroutines son un mecanismo de programación que permite escribir código asíncrono de manera
+secuencial y estructurada en Kotlin.
+
+2.	¿Cuál es la importancia de la suspensión en las coroutines y cómo se implementa?
+
+Mientras una coroutine está suspendida, el hilo subyacente puede ser utilizado para ejecutar otras tareas, 
+evitando bloqueos innecesarios y maximizando la eficiencia de los recursos.
+Se implementa utilizando el atributo "suspend" en la funciones.
+
+3.	¿Cuál es el propósito del Dispatcher en las coroutines y cómo se elige uno adecuado para cada tarea?
+
+La función de un Dispatcher es especificar en qué hilo (o hilos) se ejecutará una coroutine.no pueden realizarse en el hilo principal.
+Se elegi que Dispatcher utilizar en funcion del contexto en que estamos, si por ejemplo, necesitamos un ejecutar coroutines en el hilo principal de la aplicación, utilizamos
+"Dispatchers.main" . Por otra parte el "Dispatchers.IO" para operaciones de entrada o salida de datos intensivas y "Dispatchers.Default" para tareas de computación intensiva.
+
+4.	¿Cuál es el propósito y el uso de la función async en las coroutines?
+
+Basicamente podria considerarse como un constructor utilizado para lanzar coroutines de manera asíncrona,el resultado se obtiene mediante la función await(). Y es útil cuando se
+deben ejecutar tareas concurrentes y combinar los resultados.
+
+
+
+
+
