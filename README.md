@@ -52,4 +52,14 @@ Basicamente es un contenedor que se queda acplado al ciclo de vida de una activi
 durante los cambios de configuración. Esto implica que si la vista se destruye, los datos no se pierdan. 
 
 
+TO - DO Laboratorio 08
 
+1.	¿Cuál es la principal ventaja de utilizar Recycler View?
+
+Ofrece una carga eficiente de elementos, asi como una personalizacion de los mismos, asi mismo, permite agregar animaciones e iteracciones con los elementos que se renderizan.
+
+2.	Menciona los componentes de RecyclerView y la función que tiene cada uno de ellos
+
+- El archivo xml, que sera el modelo de los items que contendra la lista.
+- ViewHolder: a que se utiliza para almacenar una referencia a la vista de cada elemento de la lista. 
+- ViewAdapter: este se encarga de vincular los datos de una lista o de un conjunto de datos con las vistas que se muestran en pantalla
